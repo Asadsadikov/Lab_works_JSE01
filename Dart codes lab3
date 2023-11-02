@@ -1,0 +1,113 @@
+List<int> f(List<int> l){
+  List<int> list = [l[0]];
+  bool b=false;
+  for (int i=1; i<l.length; i++){
+    for (int j=0; j<list.length; j++){
+      if (l[i]==list[j]){
+        b=true;
+      }
+    }
+    if (!b){
+      list.add(l[i]);
+    }
+    b=false;
+  }
+  return list;
+}
+
+List<int> fibloop(int n){
+  int a=1, b=1, c;
+  List<int> l = [a, b];
+  if (n<=1)
+    l.remove(1);
+  if (n<=0)
+    l.remove(0);
+  for (int i=0; i<n-2; i++){
+    c=a+b;
+    a=b;
+    b=c;
+    l.add(c);
+  }
+  return l;
+}
+
+List<int> fibrec(int n){
+  List<int> l = [1];
+  if (n<=1)
+    return l;
+  l.add(1);
+  if (n==2)
+    return l;
+  l=fibrec(n-1);
+  l.add(l[l.length-1]+l[l.length-2]);
+  return l;
+}
+
+void main() {
+//   for (int i = 0; i < 5; i++) {
+//     print('hello ${i + 1}');
+//   }
+  
+//   Problem 1
+//   print('I am is Asadbek Sadikov - software engineer student at Presidential\nUniversity of Uzbekistan. I am 20 years old.');
+  
+//   Problem 2
+//   int n = 38;
+//   print(n.isEven ? 'Your number is even.':'Your number is odd.');
+  
+//   Problem 3
+//   for (int i = 1; i < 100; i=i+2) {
+//     print('$i');
+//   }
+  
+//   Problem 4
+//   List<int> a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
+//   List<int> b = List.filled(a.length, 0);
+//   for (int i=0; i<a.length; i++){
+//     b[i] = a[i]*a[i];
+//   }
+//   print(b);
+  
+//   Problem 5
+//   int n = 120;
+//   List l = [];
+//   for (int i=2; i<=n; i++){
+//     n%i==0 ? l.add(i) : n=n;
+//   }
+//   print(l);
+  
+//   Problem 6
+//   List<int> a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
+//   List<int> b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 89];
+//   List c = [];
+//   for (int i=0; i<a.length; i++){
+//     for (int j=0; j<b.length; j++){
+//       a[i]==b[j]&&!c.contains(a[i]) ? c.add(a[i]) : a[i]=a[i];
+//     }
+//   }
+//   print(c);
+  
+//   Problem 7
+//   int n = 17;
+//   int c = 0;
+//   for (int i=2; i<n; i++){
+//     n%i==0 ? n=n : c++;
+//   }
+//   print(c+2==n ? 'The number $n is a prime number.' : 'The number $n is not a prime number.');
+  
+//   Problem 8
+//   List<int> a = [1, 1, 2, 3, 1, 1, 5, 8, 13, 2, 21, 34, 2, 55, 89];
+//   print(f(a));
+  
+//   Problem 9
+//   print(fibloop(7));
+//   print(fibrec(7));
+  
+//   Problem 10
+  String s = 'Hippopotamus123@!';
+  for (int i=0; i<s.length; i++){
+    isLowerase(s);
+  }
+  
+  
+}
